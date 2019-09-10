@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>regist</title>
+</head>
+<body>
+	<form onsubmit="return register()">
+		<h2>ลงทะเบียนร่วมงาน</h2>
+		<!--input id="num" type="text" class="info" placeholder="รหัสนักศึกษา" required-->
+		<input name="nickname" type="text" class="info" placeholder="ชื่อ" required>
+		<!--input id="lname" type="text" class="info" placeholder="นามสกุล" required-->
+		<button>ลงทะเบียน</button>
+	</form>
+	<br><hr><br>
+	<table>
+		<thead>
+			<th>ลำดับที่</th>
+			<th>รหัสนักศึกษา</th>
+			<th>ชื่อ</th>
+			<th>นามสกุล</th>
+		</thead>
+		<tbody id="registerList">
+		</tbody>
+	</table>
+</body>
+<script>
+	var i = 1;
+	function register() {
+		
+		people = document.createElement("TR");
+		people.innerHTML = `<td>${i}</td>
+		<td>${document.querySelector('.info').value}</td>
+		`
+		registerList.appendChild(people);
+		i++;
+		return false;
+
+	}
+</script>
+</html>
